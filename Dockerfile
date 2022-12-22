@@ -9,9 +9,22 @@ COPY requirements.txt /app/requirements.txt
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
-
+Run apt-get update && apt-get install rsync -y
 # ONLY FOR DEVELOPMNET FAST CACHING
 COPY . /app
+
+
+# # Make port 8000 available to the world outside this container
+EXPOSE 8000
+
+# Run the Django application+
+
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+
+
+
 
 
 # Set up the database for storing the catalog data:
@@ -30,11 +43,6 @@ COPY . /app
 
 
 
-# # Make port 8000 available to the world outside this container
-EXPOSE 8000
 
-# Run the Django application
-
-ENTRYPOINT [ "./entrypoint.sh" ]
 
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

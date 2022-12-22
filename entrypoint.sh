@@ -1,11 +1,12 @@
 #!/bin/bash
-# Set up the database for storing the catalog data:
+
 # pip install rsync
 
 
-apt-get update && apt-get install rsync -y
 
 
+
+# Set up the database for storing the catalog data:
 python manage.py migrate
 
 # Populate the Database
