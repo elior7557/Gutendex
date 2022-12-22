@@ -12,7 +12,7 @@ services:
     networks:
       - back-end
     volumes:
-      - ./db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
       - ./db_init:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "gutendex"]
@@ -49,6 +49,8 @@ services:
       gutendex:
         condition: service_healthy
 
+volumes:
+  db-data:
 
 networks:
  front-end:
