@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# pip install rsync
+# Deleting the content of the static file as proof the nginx serving the front end
 
-
+rm -rf /app/static/*
 
 
 
