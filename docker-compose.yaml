@@ -27,10 +27,6 @@ services:
     #     condition: service_healthy
   proxy:
     image: nginx:1.23.3-alpine-slim
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile.proxy
-    # image: nginx:1.23.3
     ports:
       - 80:80
     volumes:
