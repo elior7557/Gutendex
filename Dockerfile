@@ -10,19 +10,12 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
-RUN command apt-get update && apt-get install rsync -y
+RUN apt-get update && apt-get install rsync -y
 
 
-# ONLY FOR DEVELOPMNET FAST CACHING
-# COPY . /app
-
-
-
-# # Make port 8000 available to the world outside this container
+# Make port 8000 available to the world outside this container
 EXPOSE 8000
 
 # Run the Django application+
-
-
 ENTRYPOINT [ "./entrypoint.sh" ]
 
