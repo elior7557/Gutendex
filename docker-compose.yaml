@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: gutendex
+      POSTGRES_PASSWORD: mypass
+      POSTGRES_DB: gutendex
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+      - ./db_init:/docker-entrypoint-initdb.d
+    # healthcheck:
+    #   test: ["CMD", "pg_isready", "-U", "gutendex"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5
+    #   start_period: 10s
+  gutendex:
+    build: .
+    ports:
+     - "8000:8000"
+    # depends_on:
+    #   db:
+    #     condition: service_healthy  
+
+
+    
+
