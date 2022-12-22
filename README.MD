@@ -18,7 +18,7 @@ To run this project, you will need to have Docker and Docker Compose installed o
 
 Clone this repository to your local machine
 ```
-git clone https://github.com/elior7557/Lavagna.git
+git clone https://github.com/elior7557/Gutendex.git
 ```
 Navigate to the root directory of the repository
 ```
